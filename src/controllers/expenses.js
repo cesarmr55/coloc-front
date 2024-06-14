@@ -1,5 +1,4 @@
 import axios from 'axios';
-import swal from 'sweetalert';
 import viewNav from '../views/nav';
 
 const Expenses = class {
@@ -15,12 +14,10 @@ const Expenses = class {
     axios.post('http://localhost:80/expenses', expenseData)
       .then(() => {
         console.log('New Expense added');
-        swal('Success!', 'Expense added successfully!', 'success');
         document.getElementById('expense-form').reset();
       })
       .catch((error) => {
         console.log(error);
-        swal('Error!', 'Failed to add expense. Please try again.', 'error');
       });
   }
 

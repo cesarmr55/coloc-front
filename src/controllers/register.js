@@ -26,7 +26,11 @@ const Register = class {
       return;
     }
     console.log('Sending Backend Call to register new User', userData);
-    axios.post('http://localhost:80/register', userData)
+    axios.post('http://localhost:80/register', {
+      username: userData.username,
+      email: userData.email,
+      password_hash: userData.password
+    })
       .then(() => {
         console.log('New User registered');
         alert('Registration successful!');

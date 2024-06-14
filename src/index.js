@@ -7,6 +7,7 @@ import Tasks from './controllers/Tasks';
 import './index.scss';
 import Expenses from './controllers/expenses';
 import Register from './controllers/register';
+import Members from './controllers/members_controller';
 
 const routes = [
   {
@@ -36,7 +37,12 @@ const routes = [
   {
     url: '/register',
     controller: Register
+  },
+  {
+    url: '/members',
+    controller: Members
   }
+
 ];
 
 new Router(routes);

@@ -1,0 +1,62 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #f8f9fa; /* Couleur de fond de la navbar */
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand img {
+  width: 30px;
+  height: 24px;
+}
+
+.navbar-nav .nav-link {
+  color: #000; /* Couleur des textes des liens */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #007bff; /* Couleur au survol des liens */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #ffffff; /* Couleur de fond du menu déroulant */
+}
+
+.navbar-nav .dropdown-item {
+  color: #000; /* Couleur des items du menu déroulant */
+}
+
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+  background-color: #ffffff; /* Couleur de fond au survol des items du menu déroulant */
+  color: #fdacac; /* Couleur au survol des items du menu déroulant */
+}
+
+/* Button Styles */
+.Btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Btn .sign svg {
+  width: 24px;
+  height: 24px;
+  fill: #000; /* Couleur de l'icône du bouton */
+}
+
+.Btn .text {
+  margin-left: 8px;
+  color: #000; /* Couleur du texte du bouton */
+  font-size: 16px;
+}
