@@ -1,0 +1,118 @@
+/* Style de la conteneur principale */
+.dashboard-container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les titres */
+.titre {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Style pour les sections */
+.dashboard-section {
+  margin-bottom: 30px;
+}
+
+.section-titre {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Style pour les tables */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+
+/* Style pour les états des tâches */
+#task-1 td,
+#task-2 td,
+#task-3 td,
+#dashboard-expense-1 td,
+#dashboard-expense-2 td,
+#dashboard-expense-3 td {
+  color: #555;
+}
+
+/* Styles spécifiques pour le statut */
+td:contains("En cours") {
+  color: #d9a34a;
+}
+
+td:contains("Terminé") {
+  color: #4caf50;
+}
+
+td:contains("À faire") {
+  color: #f44336;
+}
+
+/* Styles spécifiques pour la priorité */
+td:contains("Haute") {
+  font-weight: bold;
+  color: #ff5722;
+}
+
+td:contains("Moyenne") {
+  color: #ff9800;
+}
+
+/* Style pour les montants */
+td:contains("€") {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Ajout de responsive design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 10px;
+  }
+
+  .titre {
+    font-size: 1.5em;
+  }
+
+  .section-titre {
+    font-size: 1.2em;
+  }
+}

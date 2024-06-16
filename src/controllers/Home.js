@@ -4,8 +4,8 @@ import viewTache from '../views/tache';
 import viewAlerte from '../views/alerte';
 import viewCalendar from '../views/calendar';
 import Calendar from './calendar_controller';
-import viewBouton from '../views/bouton_card';
 import viewMembers from '../views/members';
+import viewExpenses from '../views/expenses';
 
 const Home = class {
   constructor(params) {
@@ -16,7 +16,6 @@ const Home = class {
 
   bindEvents() {
     const logoutButton = document.getElementById('logout-btn');
-    const createCardButton = document.getElementById('cta');
 
     if (logoutButton) {
       logoutButton.addEventListener('click', () => {
@@ -24,23 +23,27 @@ const Home = class {
       });
     }
 
-    if (createCardButton) {
-      createCardButton.addEventListener('click', () => {
-        window.location.href = 'create.js';
-      });
-    }
-
     this.bindDeleteMemberEvents();
+    this.bindTaskEvents();
+    this.bindExpenseEvents();
   }
 
   bindDeleteMemberEvents() {
-    document.querySelectorAll('.delete-btn').forEach(button => {
+    document.querySelectorAll('.delete-btn').forEach((button) => {
       button.addEventListener('click', async (event) => {
         const memberId = event.target.getAttribute('data-member-id');
         await this.deleteMember(memberId);
         document.getElementById(`member-${memberId}`).remove();
       });
     });
+  }
+
+  bindTaskEvents() {
+    // Add event listeners related to task management here
+  }
+
+  bindExpenseEvents() {
+    // Add event listeners related to expense management here
   }
 
   async deleteMember(memberId) {
@@ -62,8 +65,29 @@ const Home = class {
     }
   }
 
+  async fetchExpenses() {
+    try {
+      const response = await axios.get('http://localhost:80/expenses');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching expenses:', error);
+      return [];
+    }
+  }
+
+  async fetchDashboardData() {
+    try {
+      const tasks = await this.fetchTasks();
+      const expenses = await this.fetchExpenses();
+      return { tasks, expenses };
+    } catch (error) {
+      console.error('Error fetching dashboard data:', error);
+      return { tasks: [], expenses: [] };
+    }
+  }
+
   async render() {
-    const tasks = await this.fetchTasks();
+    const { tasks, expenses } = await this.fetchDashboardData();
     return `
       <div class="container">
         <div class="row">
@@ -82,7 +106,7 @@ const Home = class {
               <div class="col-12 col-lg-4">${viewMembers()}</div>
             </div>
             <div class="row">
-              <div class="col-12 col-lg-3">${viewBouton()}</div>
+              <div class="col-12 col-lg-5">${viewExpenses(expenses)}</div>
             </div>
           </div>  
         </div>

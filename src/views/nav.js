@@ -18,10 +18,13 @@ export default () => (`
           <a class="nav-link active" aria-current="page" href="register">S'enregistrer</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="dashboard">Tableau de bord</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="expenses">Dépenses</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="members">Members</a>
+          <a class="nav-link active" aria-current="page" href="members">Membres</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="tasks">Taches</a>

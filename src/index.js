@@ -8,6 +8,7 @@ import './index.scss';
 import Expenses from './controllers/expenses';
 import Register from './controllers/register';
 import Members from './controllers/members_controller';
+import Dashboard from './controllers/dashboard_controller';
 
 const routes = [
   {
@@ -41,6 +42,10 @@ const routes = [
   {
     url: '/members',
     controller: Members
+  },
+  {
+    url: '/dashboard',
+    controller: Dashboard
   }
 
 ];
